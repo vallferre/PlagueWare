@@ -23,11 +23,15 @@
                 <button class="btn">Seleccionar Archivo</button>
             </div>
             
-            <div class="preview-container">
-                <img id="image-preview" alt="Vista previa de la imagen">
+            <div class="preview-container" style="display: none;">
+                <div class="preview-wrapper">
+                    <button class="close-btn" id="close-btn">×</button>
+                    <img id="image-preview" alt="Vista previa de la imagen">
+                </div>
                 <p class="file-info" id="file-info"></p>
             </div>
         </div>
+
     </div>
 
     <script>
@@ -87,6 +91,37 @@
                 reader.onload = (event) => {
                     imagePreview.src = event.target.result;
                     imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        const closeBtn = document.getElementById('close-btn');
+        const previewContainer = document.querySelector('.preview-container');
+        
+        // Función para resetear la vista previa
+        function resetPreview() {
+            imagePreview.src = '';
+            imagePreview.style.display = 'none';
+            fileInfo.textContent = '';
+            previewContainer.style.display = 'none';
+            fileInput.value = ''; // Limpia el input file
+        }
+        
+        // Evento para el botón de cerrar
+        closeBtn.addEventListener('click', resetPreview);
+        
+        // Modifica tu evento change para mostrar el contenedor
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                fileInfo.textContent = `Archivo: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+                
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imagePreview.src = event.target.result;
+                    imagePreview.style.display = 'block';
+                    previewContainer.style.display = 'block'; // Muestra el contenedor
                 };
                 reader.readAsDataURL(file);
             }
