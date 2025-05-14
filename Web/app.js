@@ -89,3 +89,36 @@ fileInput.addEventListener('change', (e) => {
         reader.readAsDataURL(file);
     }
 });
+
+// Chatbot
+const chatbotButton = document.getElementById('chatbot-button');
+const chatbotWindow = document.getElementById('chatbot-window');
+const chatbotClose = document.querySelector('.chatbot-close');
+const chatbotSend = document.querySelector('.chatbot-send');
+const chatbotInput = document.querySelector('.chatbot-input');
+
+// Alternar visibilidad del chat
+chatbotButton.addEventListener('click', () => {
+  chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Cerrar el chat
+chatbotClose.addEventListener('click', () => {
+  chatbotWindow.style.display = 'none';
+});
+
+// Enviar mensaje (función básica)
+chatbotSend.addEventListener('click', () => {
+  if (chatbotInput.value.trim() !== '') {
+    // Aquí iría la lógica para enviar el mensaje
+    console.log("Mensaje enviado:", chatbotInput.value);
+    chatbotInput.value = '';
+  }
+});
+
+// Permitir enviar con Enter
+chatbotInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    chatbotSend.click();
+  }
+});
