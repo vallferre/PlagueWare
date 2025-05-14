@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Plantas</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Identificador de Plantas</h1>
+        
+        <div class="upload-area" id="upload-area">
+            <div class="upload-icon">🌿</div>
+            <h3>Sube una foto de tu planta</h3>
+            <p>Arrastra y suelta la imagen aquí o haz clic para seleccionar</p>
+            <input type="file" id="file-input" accept="image/*">
+            <button class="btn">Seleccionar Archivo</button>
+        </div>
+        
+        <div class="preview-container">
+            <img id="image-preview" alt="Vista previa de la imagen">
+            <p class="file-info" id="file-info"></p>
+        </div>
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+        const imagePreview = document.getElementById('image-preview');
+        const fileInfo = document.getElementById('file-info');
+        
+        // Cuando se hace clic en el área de carga
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        // Cuando se selecciona un archivo
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                // Mostrar información del archivo
+                fileInfo.textContent = `Archivo: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+                
+                // Mostrar vista previa de la imagen
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imagePreview.src = event.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Para el efecto de arrastrar y soltar
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.backgroundColor = '#e8f5e9';
+            uploadArea.style.borderColor = '#4caf50';
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.backgroundColor = '#f1f8e9';
+            uploadArea.style.borderColor = '#81c784';
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.backgroundColor = '#f1f8e9';
+            uploadArea.style.borderColor = '#81c784';
+            
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                fileInput.files = e.dataTransfer.files;
+                
+                // Mostrar información del archivo
+                fileInfo.textContent = `Archivo: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+                
+                // Mostrar vista previa de la imagen
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imagePreview.src = event.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
