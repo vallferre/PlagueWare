@@ -6,12 +6,12 @@ Respositorio de la Webapp PlagueWare para deteccion temprana de enfermedades en 
 - Castillo, Nahuel
 - Ferreira, Valentin
 - Garcia, Juan Ignacio
+- Igarzabal, Valentín
 - Insaurralde, Ciro
 - Lovera, Franco
 - Mauro, Julian
 - Pulido, Agustin
-- Igarzabal, Valentín
 
 ### Docentes
-- Pomerantz Macarena
-- Rodriguez Facundo
+- Pomerantz, Macarena
+- Rodriguez, Facundo
