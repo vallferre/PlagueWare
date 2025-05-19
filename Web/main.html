@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identificador de Plantas</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
+    <!-- HEADER NAV -->
+    <nav class="navbar">
+        <img src="img/PlagueWare.jpg" alt="Logo PlagueWare" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Volver al inicio</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
     <div class="main-container">
         <header class="header">
-            <img src="PlagueWare.jpg" alt="Logo PlagueWare" class="logo">
             <h1>PlagueWare</h1>
         </header>
         <div class="container">
@@ -31,35 +40,39 @@
                 <p class="file-info" id="file-info"></p>
             </div>
         </div>
-
     </div>
 
-    <!-- Chatbot -->
-<div class="chatbot-container">
-    <div class="chatbot-button" id="chatbot-button">💬</div>
-    <div class="chatbot-window" id="chatbot-window">
-      <div class="chatbot-header">
-        <div class="chatbot-title">
-          <h3>Asistente PlagueWare</h3>
-          <span class="online-status"></span>
+    <!-- CHATBOT -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" id="chatbot-button">💬</div>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <h3>Asistente PlagueWare</h3>
+                    <span class="online-status"></span>
+                </div>
+                <button class="chatbot-close">×</button>
+            </div>
+            <div class="chatbot-body">
+                <div class="chat-message">
+                    <div class="chat-avatar">🤖</div>
+                    <div class="chat-text">
+                        <p>En construcción 🔨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-footer">
+                <input type="text" placeholder="Escribe algo..." class="chatbot-input">
+                <button class="chatbot-send">➤</button>
+            </div>
         </div>
-        <button class="chatbot-close">×</button>
-      </div>
-      <div class="chatbot-body">
-        <div class="chat-message">
-          <div class="chat-avatar">🤖</div>
-          <div class="chat-text">
-            <p>En construcción 🔨</p>
-          </div>
-        </div>
-      </div>
-      <div class="chatbot-footer">
-        <input type="text" placeholder="Escribe algo..." class="chatbot-input">
-        <button class="chatbot-send">➤</button>
-      </div>
     </div>
-  </div>
 
-    <script src="app.js"></script>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 PlagueWare. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
