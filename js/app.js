@@ -6,9 +6,9 @@ const fileInfo = document.getElementById('file-info');
 const previewContainer = document.querySelector('.preview-container');
 const closeBtn = document.getElementById('close-btn');
 const loadingOverlay = document.getElementById('loading-overlay');
+const API_URL = "http://192.168.0.107:7860/predict";
 
 // --- Funciones principales ---
-
 /**
  * Envía la imagen a la API de Colab y muestra el resultado
  */
