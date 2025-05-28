@@ -16,6 +16,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#pruebalo">Pruébalo</a></li>
                 <li><a href="#contacto">Contáctanos</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
         </nav>
     </header>
@@ -47,6 +48,49 @@
         </div>
     </section>
 
+    <!-- SECCIÓN: FAQ -->
+    <section id="faq" class="section">
+        <div class="section-content">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">¿Qué es PlagueWare?</button>
+                <div class="faq-answer">
+                    <p>PlagueWare es una plataforma que te permite identificar plantas a partir de una imagen, usando inteligencia artificial.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">¿Necesito registrarme para usar la herramienta?</button>
+                <div class="faq-answer">
+                    <p>No, actualmente puedes usar la herramienta sin necesidad de registrarte.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">¿Qué tipos de plantas reconoce?</button>
+                <div class="faq-answer">
+                    <p>PlagueWare está entrenado para reconocer una gran variedad de plantas comunes, especialmente de interior, ornamentales y algunas silvestres.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">¿Es gratuita la plataforma?</button>
+                <div class="faq-answer">
+                    <p>Sí, PlagueWare es totalmente gratuita en su versión MVP.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        </script>
+    </section>
+
     <!-- SECCIÓN: CONTACTO -->
     <section id="contacto" class="section">
         <div class="section-content">
@@ -59,6 +103,5 @@
     <footer>
         <p>&copy; 2025 PlagueWare. Todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>

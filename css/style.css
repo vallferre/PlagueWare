@@ -118,3 +118,34 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+
+.faq-item {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #66bb6a;
+    color: white;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #388e3c;
+}
+
+.faq-answer {
+    background-color: #f1f8f1;
+    padding: 15px;
+    border-left: 4px solid #2e7d32;
+    display: none;
+    margin-top: 5px;
+    border-radius: 5px;
+}
